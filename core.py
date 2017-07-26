@@ -11,7 +11,7 @@ def total_cost(item_price):
     """
     item = item_price * 0.07
     result = item_price + item
-    return "%.2f" % result 
+    return '{:0.2f}' % result 
 
 
 def deposit_refund(item_replace):
@@ -27,7 +27,26 @@ def deposit_refund(item_replace):
     """
     item = item_replace * 0.10
     result = item_replace + item
-    return "%.2f" % result 
+    return '{:0.2f}' % result 
 
+def price_of(inventory, item_name):
+    ''' ([[str, float, float]], str) -> (float)
+    This function will get a string and 
+    it will look in a txt file and pull out 
+    the price of the item and return it
+    ''' 
+    new_dict = {}
+    for item in inventory:
+        if item_name.strip() == item[0].strip().lower():
+            return float(item[1])
 
-
+def item_inventory(inventory, item):
+    '''str -> str
+    return item and price
+    '''
+    message = 'Sorry invalid item'
+    for element in inventory:
+        if item in inventory:
+            return element[0:1] 
+    return message
+    
