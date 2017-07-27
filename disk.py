@@ -28,3 +28,20 @@ def function_total(amount, item, days):
             total = price * amount * days
             return total 
     return message
+
+def price_of(item_name):
+    ''' ([[str, float, float]], str) -> (float)
+    This function will get a string and 
+    it will look in a txt file and pull out 
+    the price of the item and return it
+    '''
+    message = 'item not found in rental'
+    with open('inventory.txt', 'r') as file:
+        file.readline()
+        items = file.readlines()
+    for element in items:
+        if item_name in element:
+            pieces = element.split(', ')
+            price = pieces[1] 
+            return price
+    return message
