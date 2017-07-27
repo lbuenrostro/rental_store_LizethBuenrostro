@@ -52,7 +52,3 @@ def item_inventory(inventory, item):
         if item in inventory:
             return element[0:1] 
     return message
-
-def function_total(amount, item, days):
-    '''Float, float, float -> float'''
-    
