@@ -11,23 +11,23 @@ def total_cost(item_price):
     """
     item = item_price * 0.07
     result = item_price + item
-    return '{:0.2f}' % result 
+    return '{:0.2f}'.format(result)
 
 
-def deposit_refund(item_replace):
-    """ (float) -> float 
-    This function will get the deposit_refund
-    which will multiply *0.10 for every item
-    >>> deposit_refund(2.00)
-    2.10
-    >>> deposit_refund(1.00)
-    1.10
-    >>> deposit_refund(3.00)
-    3.10
-    """
-    item = item_replace * 0.10
-    result = item_replace + item
-    return '{:0.2f}' % result 
+# def deposit_refund(item_replace):
+#     """ (float) -> float 
+#     This function will get the deposit_refund
+#     which will multiply *0.10 for every item
+#     >>> deposit_refund(2.00)
+#     2.10
+#     >>> deposit_refund(1.00)
+#     1.10
+#     >>> deposit_refund(3.00)
+#     3.10
+#     """
+#     item = item_replace * 0.10
+#     result = item_replace + item
+#     return '{:0.2f}' % result 
 
 def price_of(inventory, item_name):
     ''' ([[str, float, float]], str) -> (float)
@@ -35,10 +35,13 @@ def price_of(inventory, item_name):
     it will look in a txt file and pull out 
     the price of the item and return it
     ''' 
-    new_dict = {}
+    message = 'Sorry invalid item'
+    store = []
     for item in inventory:
-        if item_name.strip() == item[0].strip().lower():
-            return float(item[1])
+        pieces = item.split(', ')
+        if item_name.title() in item:
+            return float(pieces[1])
+    return message
 
 def item_inventory(inventory, item):
     '''str -> str
@@ -49,4 +52,7 @@ def item_inventory(inventory, item):
         if item in inventory:
             return element[0:1] 
     return message
+
+def function_total(amount, item, days):
+    '''Float, float, float -> float'''
     
