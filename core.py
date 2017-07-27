@@ -29,19 +29,7 @@ def total_cost(item_price):
 #     result = item_replace + item
 #     return '{:0.2f}' % result 
 
-def price_of(inventory, item_name):
-    ''' ([[str, float, float]], str) -> (float)
-    This function will get a string and 
-    it will look in a txt file and pull out 
-    the price of the item and return it
-    ''' 
-    message = 'Sorry invalid item'
-    store = []
-    for item in inventory:
-        pieces = item.split(', ')
-        if item_name.title() in item:
-            return float(pieces[1])
-    return message
+
 
 def item_inventory(inventory, item):
     '''str -> str
