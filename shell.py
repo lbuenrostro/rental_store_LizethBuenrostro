@@ -12,14 +12,15 @@ def slow_type(t):
 
 def main():
     slow_type('\n🏸WELCOME to Tennis Rental Agency🏸.Press Enter... \n')
-    item = slow_type("what would you like today?🏸\n")
+    slow_type('🏸Rental Agency charges by Day🏸\n🏸We do not sale. Only Rent🏸\n')   
+    item = slow_type("what would you like today?🏸Press Enter...\n")
     inventory = disk.load_inventory()
     print(inventory)
     item = slow_type("What type of equipment would you like?\t").title().strip()
     price = core.price_of(inventory, item) 
-    print(price)    
+    print(price) 
 
-    # update_inventory(item, price, items_left)      
+    update_inventory(item, price, items_left)      
     print('🏸Thanks for stopping by, come back SOON!!🏸') 
 if __name__ == '__main__':
     main()
