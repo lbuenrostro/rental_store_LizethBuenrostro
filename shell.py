@@ -17,10 +17,16 @@ def main():
     inventory = disk.load_inventory()
     print(inventory)
     item = slow_type("What type of equipment would you like?\t").title().strip()
-    price = core.price_of(inventory, item) 
-    print(price) 
+    price = disk.price_of(item)
+    tax = core.total_cost(float(price))
+    print('Including taxes your total is $', float(tax))
+    
 
-    update_inventory(item, price, items_left)      
+
+
+
+    # disk.update_inventory(item, price, items_left)      
     print('🏸Thanks for stopping by, come back SOON!!🏸') 
 if __name__ == '__main__':
     main()
+
