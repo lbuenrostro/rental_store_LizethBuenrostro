@@ -17,4 +17,14 @@ def load_inventory():
 
 def function_total(amount, item, days):
     '''Float, float, float -> float'''
-    
+    message = '🏸Item not found🏸'
+    with open('inventory.txt', 'r') as file:
+        file.readline()
+        items = file.readlines()
+    for element in items:
+        if item.title() in element:
+            pieces = element.split(', ')
+            price = float(pieces[1]) 
+            total = price * amount * days
+            return total 
+    return message
