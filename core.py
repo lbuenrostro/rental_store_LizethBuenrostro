@@ -24,3 +24,12 @@ def item_inventory(inventory, item):
         if item in inventory:
             return element[0:1] 
     return message
+
+def tax_cost(money):
+    ''' (float) -> float 
+    This function will get the total_cost
+    which will multiply *0.07 for every item
+    '''
+    tax = money * 0.07
+    total = tax + money
+    return '{:0.2f}'.format(total)
