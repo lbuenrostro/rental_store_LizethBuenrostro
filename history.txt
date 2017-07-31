@@ -1,0 +1,3 @@
+item, hours, tax_price
+tax_priceTennis Balls Low Compression, 4, 85.60
+Pro Tennis Black Bag, 3, 96.30
