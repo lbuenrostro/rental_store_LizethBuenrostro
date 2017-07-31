@@ -48,4 +48,3 @@ def update_history(item, hours, tax_price):
     msg = item + ', ' + str(hours) + ', ' + str(tax_price) + '\n'
     with open('history.txt', 'a') as file:
         file.write(msg)
-
