@@ -1,9 +1,4 @@
-# def update_history(item, price, items_left):
-#     ''' str, float, float _> None
-#     '''
-#     msg = item + ', ' + str(price) + ', ' + str(items_left) + '\n'
-#     with open('history.txt', 'a') as file:
-#         file.write(msg)
+
 
 def load_inventory():
     with open('inventory.txt', 'r') as file:
@@ -45,3 +40,12 @@ def total_money(item, hours, amount):
             total = float(price) * float(hours) * float(amount)
             return total 
     return message
+
+
+def update_history(item, hours, tax_price):
+    ''' str, float, float _> None
+    '''
+    msg = item + ', ' + str(hours) + ', ' + str(tax_price) + '\n'
+    with open('history.txt', 'a') as file:
+        file.write(msg)
+
