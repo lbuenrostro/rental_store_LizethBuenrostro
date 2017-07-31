@@ -32,7 +32,7 @@ def price_of(item_name):
             return float(price)
     return message
 
-def total_money(item, days, amount):
+def total_money(item, hours, amount):
     '''Float, float, float -> float'''
     message = '🎾Item not found🎾'
     with open('inventory.txt', 'r') as file:
@@ -41,8 +41,7 @@ def total_money(item, days, amount):
     for element in items:
         if item.title() in element:
             pieces = element.split(', ')
-            price = float(pieces[1]) 
-            total = price * days * amount
+            price = pieces[1] 
+            total = float(price) * float(hours) * float(amount)
             return total 
     return message
-
