@@ -48,3 +48,19 @@ def update_history(item, hours, tax_price):
     msg = item + ', ' + str(hours) + ', ' + str(tax_price) + '\n'
     with open('history.txt', 'a') as file:
         file.write(msg)
+
+
+def deposit_value(item):
+    '''Float -> float'''
+    message = '🎾Item not found🎾'
+    with open('inventory.txt', 'r') as file:
+        file.readline()
+        items = file.readlines()
+    for element in items:
+        if item.title() in element:
+            x = element.split(', ')
+            depo = x[2]
+            total = float(depo) * .10
+            return '{:0.2f}'.format(total) 
+    return message
+
