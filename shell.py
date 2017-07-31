@@ -22,7 +22,7 @@ def main():
     tax = core.tax_cost(float(answer))
     print('Your total is $', tax) 
 
-    # disk.update_inventory(item, price, items_left)      
+    disk.update_history(item, hours, tax)      
     print('🎾Thanks for stopping by, come back SOON!!🎾') 
 if __name__ == '__main__':
     main()
