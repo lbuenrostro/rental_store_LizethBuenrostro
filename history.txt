@@ -1,3 +1,15 @@
-item, hours, tax_price
-tax_priceTennis Balls Low Compression, 4, 85.60
+item, hours, tax_price, deposit
+Tennis Balls Low Compression, 4, 85.60
 Pro Tennis Black Bag, 3, 96.30
+Pro Tennis Black Bag, 12, 577.80
+Travel Cart Ball Basket, 5, 133.75
+Tennis Racquet Graphene Speed, 2, 34.24
+Powerbase Solo Tennis Trainer, 2, 32.10
+Pro Tennis Black Bag, 2, 32.10
+Travel Cart Ball Basket, 2, 107.00
+Tennis Racquet Graphene Speed, 2, 34.24
+Powerbase Solo Tennis Trainer, 2, 32.10
+Pro Tennis Black Bag, 3, 48.15
+Travel Cart Ball Basket, 2, 53.50
+Pro Tennis Black Bag, 2, 32.10
+Powerbase Solo Tennis Trainer, 3, 48.15
