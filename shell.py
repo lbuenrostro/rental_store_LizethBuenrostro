@@ -21,10 +21,7 @@ def rent_store():
     tax = core.tax_cost(float(answer))
     print('Your total is $', tax)
     deposit = disk.deposit_value(item)
-    print('Deposit is $', deposit)
-    items = disk.load_items()
-    name = slow_type('What is your name?\n').title().strip()
-    return_depo = core.return_deposit(items, name) 
+    print('Deposit is $', deposit) 
     print('You also have to pay a deposit of $', return_depo) 
     disk.update_history(name, item, hours, tax, deposit)      
     print('🎾Thanks for stopping by, come back SOON!!🎾') 
@@ -33,7 +30,10 @@ def main():
     if choice.lower() == 's':
         rent_store()
     elif choice.lower() == 'r':
-        rent_store
+        items = disk.load_items()
+        name = slow_type('What is your name?\n').title().strip()
+        return_depo = core.return_deposit(items, name)
+        
     
 if __name__ == '__main__':
     main()
