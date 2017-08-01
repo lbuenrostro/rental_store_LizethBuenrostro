@@ -16,3 +16,13 @@ def tax_cost(money):
     tax = money * 0.07
     total = tax + money
     return '{:0.2f}'.format(total)
+
+def return_deposit(inventory, name):
+    ''' list[list], str -> float
+    will return the return_deposit
+    '''
+    message = 'invlaid item' 
+    for item in inventory:
+        if name in item:
+            return item[4]
+            
