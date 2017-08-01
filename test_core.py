@@ -1,14 +1,17 @@
 import core 
 
-def test_total_cost():
-    assert core.total_cost(1.00) == 1.07
-    assert core.total_cost(5.00) == 5.07 
-    assert core.total_cost(4.00) == 4.07 
- 
+def test_tax_cost():
+    money = core.tax_cost(10.00)
+    expected = '10.70'
+    assert money == expected
 
+def test_item_inventory():
+    actual = core.item_inventory([['bob', 25, 4.00]], 'bob')
+    expect = 4.00
+    assert expect
 
-def test_deposit_refund():
-    assert core.deposit_refund(2.00) == 2.10
-    assert core.deposit_refund(1.00) == 1.10
-    assert core.deposit_refund(3.00) == 3.10
+def test_return_deposit(): 
+    actual = core.return_deposit([['bob', 'Pro Tennis Black Bag', 4, 64.20, 7.50]], 'bob')
+    expect = [['bob', 'Pro Tennis Black Bag', 4, 64.20, 7.50]]
+    assert expect
 
