@@ -1,5 +1,3 @@
-
-
 def load_inventory():
     with open('inventory.txt', 'r') as file:
         file.readline()
@@ -10,22 +8,38 @@ def load_inventory():
         inventory.append([pieces[0]])
     return inventory
 
-def price_of(item_name):
-    ''' ([[str, float, float]], str) -> (float)
-    This function will get a string and 
-    it will look in a txt file and pull out 
-    the price of the item and return it
-    '''
-    message = '🎾item not found in rental🎾'
+def load_items():
     with open('inventory.txt', 'r') as file:
         file.readline()
         items = file.readlines()
-    for element in items:
-        if item_name in element:
-            pieces = element.split(', ')
-            price = pieces[1] 
-            return float(price)
-    return message
+        inventory = []
+        for item in items:
+            pieces = item.split(', ')
+            inventory.append([
+                pieces[0],
+                pieces[1],
+                pieces[2].strip()
+            ])
+        return inventory
+
+# def price_of(item_name):
+#     ''' ([[str, float, float]], str) -> (float)
+#     This function will get a string and 
+#     it will look in a txt file and pull out 
+#     the price of the item and return it
+#     '''
+#     message = '🎾item not found in rental🎾'
+#     with open('inventory.txt', 'r') as file:
+#         file.readline()
+#         items = file.readlines()
+#     for element in items:
+#         if item_name not in element:
+#             return False
+#       inventory  else:
+#             pieces = element.split(', ')
+#             price = pieces[1] 
+#             return float(price)
+#     return message
 
 def total_money(item, hours, amount):
     '''Float, float, float -> float'''
@@ -42,10 +56,10 @@ def total_money(item, hours, amount):
     return message
 
 
-def update_history(item, hours, tax_price):
-    ''' str, float, float _> None
+def update_history(name, item, hours, tax_price, deposit):
+    ''' str, float, float -> None
     '''
-    msg = item + ', ' + str(hours) + ', ' + str(tax_price) + '\n'
+    msg = name + ', ' + item + ', ' + str(hours) + ', ' + str(tax_price) + ', ' + str(deposit) + '\n'
     with open('history.txt', 'a') as file:
         file.write(msg)
 
