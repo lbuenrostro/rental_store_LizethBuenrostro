@@ -9,8 +9,7 @@ def slow_type(t):
         sys.stdout.flush() 
         time.sleep(typing_speed / 970.0)
     return input()
-
-def main():
+def rent_store():
     slow_type('\n             🎾WELCOME to Tennis Rental Agency🎾.Press Enter...             \n')
     slow_type('🎾Rental Agency charges by Hour🎾\n🎾Deposit is 10% of every item🎾\n🎾We do not sale. Only Rent🎾\n')   
     inventory = disk.load_inventory()
@@ -23,8 +22,19 @@ def main():
     print('Your total is $', tax)
     deposit = disk.deposit_value(item)
     print('Deposit is $', deposit)
-    disk.update_history(item, hours, tax, deposit)      
+    items = disk.load_items()
+    name = slow_type('What is your name?\n').title().strip()
+    return_depo = core.return_deposit(items, name) 
+    print('You also have to pay a deposit of $', return_depo) 
+    disk.update_history(name, item, hours, tax, deposit)      
     print('🎾Thanks for stopping by, come back SOON!!🎾') 
+def main():
+    choice = slow_type('🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n')
+    if choice.lower() == 's':
+        rent_store()
+    elif choice.lower() == 'r':
+        rent_store
+    
 if __name__ == '__main__':
     main()
     
