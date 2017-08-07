@@ -1,8 +1,14 @@
 import core
 import disk
+
+
 def rent_store():
-    input('\n             🎾WELCOME to Tennis Rental Agency🎾.Press Enter...             \n')
-    input('🎾Rental Agency charges by Hour🎾\n🎾Deposit is 10% of every item🎾\n🎾We do not sale. Only Rent🎾\n')   
+    input(
+        '\n             🎾WELCOME to Tennis Rental Agency🎾.Press Enter...             \n'
+    )
+    input(
+        '🎾Rental Agency charges by Hour🎾\n🎾Deposit is 10% of every item🎾\n🎾We do not sale. Only Rent🎾\n'
+    )
     inventory = disk.load_inventory()
     print(inventory)
     item = input('What type of equipment would you like?\t').title().strip()
@@ -14,14 +20,18 @@ def rent_store():
     deposit = disk.deposit_value(item)
     print('Deposit is $', deposit)
     name = input('What is your name?\n').title().strip()
-    disk.update_history(name, item, hours, tax, deposit)      
-    print('🎾Thanks for stopping by, come back SOON!!🎾') 
+    disk.update_history(name, item, hours, tax, deposit)
+    print('🎾Thanks for stopping by, come back SOON!!🎾')
+
 
 def manager_check():
-    input 
+    input('Welcome to Manager check up: display total revenue..')
+
 
 def main():
-    choice = input('🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n🎾Manager check PRESS m🎾\n')
+    choice = input(
+        '🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n🎾Manager check PRESS m🎾\n'
+    )
     if choice.lower() == 's':
         rent_store()
     elif choice.lower() == 'm':
@@ -30,7 +40,9 @@ def main():
         items = disk.load_items()
         name = input('What is your name?\n').title().strip()
         all_invi = disk.load_items()
-        return_depo = core.return_deposit(all_invi, name) 
-        print('Here is your deposit $', return_depo) 
+        return_depo = core.return_deposit(all_invi, name)
+        print('Here is your deposit $', return_depo)
+
+
 if __name__ == '__main__':
     main()
