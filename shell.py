@@ -26,7 +26,7 @@ def rent_store():
     disk.update_history(name, item, hours, tax, deposit)      
     print('🎾Thanks for stopping by, come back SOON!!🎾') 
 def main():
-    choice = slow_type('🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n')
+    choice = slow_type('🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n🎾Manager check PRESS m🎾\n')
     if choice.lower() == 's':
         rent_store()
     elif choice.lower() == 'r':
@@ -34,8 +34,6 @@ def main():
         name = slow_type('What is your name?\n').title().strip()
         all_invi = disk.load_items()
         return_depo = core.return_deposit(all_invi, name) 
-
         print('Here is your deposit $', return_depo) 
 if __name__ == '__main__':
     main()
-    
