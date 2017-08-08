@@ -25,22 +25,22 @@ def rent_store():
 
 
 def manager_check():
-    welcome = input('\nWelcome Manager...\n')
     user = 'manager'
     password = "tennis_90"
-    username = input("Please enter username: ")
+    username = input("\nPlease enter username: ")
     pw = input("Please enter password: ")
     if username in user and pw == password:
         print(
             input(
-                'Welcome Mr. ' + username +
-                ' 🎾WELCOME to Tennis Rental Agency🎾:display total revenue\n\n... Press ENTER to continue...\n'
+                '\nWelcome Mr. ' + username +
+                ' 🎾WELCOME to Tennis Rental Agency🎾\n... Press ENTER to continue...'
             ))
     else:
         print('Invalid Username')
         exit()
-    items = disk.load_items()
-    print(items)
+    history = disk.load_history()
+    return_revenue = core.total_deposits(history)
+    print('Here is the total revenue:$', return_revenue)
 
 
 def main():
@@ -52,9 +52,9 @@ def main():
     elif choice.lower() == 'm':
         manager_check()
     elif choice.lower() == 'r':
-        items = disk.load_items()
+        items = disk.load_history()
         name = input('What is your name?\n').title().strip()
-        all_invi = disk.load_items()
+        all_invi = disk.load_history()
         return_depo = core.return_deposit(all_invi, name)
         print('Here is your deposit $', return_depo)
 
