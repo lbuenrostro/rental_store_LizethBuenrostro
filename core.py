@@ -1,13 +1,3 @@
-def item_inventory(inventory, item):
-    '''str -> str
-    return item and price
-    '''
-    message = 'Sorry invalid item'
-    for element in inventory:
-        if item in inventory:
-            return element[0:1] 
-    return message
-
 def tax_cost(money):
     ''' (float) -> float 
     This function will get the total_cost
@@ -17,12 +7,24 @@ def tax_cost(money):
     total = tax + money
     return '{:0.2f}'.format(total)
 
+
 def return_deposit(inventory, name):
     ''' list[list], str -> float
     will return the return_deposit
     '''
-    message = 'invlaid item' 
+    message = 'invalid item'
     for item in inventory:
         if name in item:
             return item[4]
-            
+    return message
+
+
+def total_deposits(history):
+    ''' list[list] -> float
+    calculate total revenue 
+    to user 
+    '''
+    x = 0
+    for item in history:
+        x += item[4]
+    return x
