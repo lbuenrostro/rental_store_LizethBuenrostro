@@ -25,7 +25,22 @@ def rent_store():
 
 
 def manager_check():
-    input('Welcome to Manager check up: display total revenue..')
+    welcome = input('\nWelcome Manager...\n')
+    user = 'manager'
+    password = "tennis_90"
+    username = input("Please enter username: ")
+    pw = input("Please enter password: ")
+    if username in user and pw == password:
+        print(
+            input(
+                'Welcome Mr. ' + username +
+                ' 🎾WELCOME to Tennis Rental Agency🎾:display total revenue\n\n... Press ENTER to continue...\n'
+            ))
+    else:
+        print('Invalid Username')
+        exit()
+    items = disk.load_items()
+    print(items)
 
 
 def main():
