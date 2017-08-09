@@ -2,6 +2,26 @@ import core
 import disk
 
 
+def main():
+    choice = input(
+        '🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n🎾Manager check PRESS m🎾\n'
+    )
+    if choice.lower() == 's':
+        rent_store()
+    elif choice.lower() == 'm':
+        manager_check()
+    elif choice.lower() == 'r':
+        items = disk.load_history()
+        name = input('What is your name?\n').title().strip()
+        all_invi = disk.load_history()
+        return_depo = core.return_deposit(all_invi, name)
+        print('Here is your deposit $', return_depo)
+
+
+if __name__ == '__main__':
+    main()
+
+
 def rent_store():
     input(
         '\n             🎾WELCOME to Tennis Rental Agency🎾.Press Enter...             \n'
@@ -41,23 +61,3 @@ def manager_check():
     history = disk.load_history()
     return_revenue = core.total_deposits(history)
     print('Here is the total revenue:$', return_revenue)
-
-
-def main():
-    choice = input(
-        '🎾If you wish to look at the store PRESS s🎾\n🎾If you want to return an item PRESS r🎾\n🎾Manager check PRESS m🎾\n'
-    )
-    if choice.lower() == 's':
-        rent_store()
-    elif choice.lower() == 'm':
-        manager_check()
-    elif choice.lower() == 'r':
-        items = disk.load_history()
-        name = input('What is your name?\n').title().strip()
-        all_invi = disk.load_history()
-        return_depo = core.return_deposit(all_invi, name)
-        print('Here is your deposit $', return_depo)
-
-
-if __name__ == '__main__':
-    main()
