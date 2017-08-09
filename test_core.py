@@ -20,6 +20,7 @@ def test_return_deposit():
 
 def test_total_deposits():
     actual = core.total_deposits(
-        [['milly', 'Pro Tennis Black Bag', 4, 64.20, 7.50]])
-    expect = 7.50
+        [['milly', 'Pro Tennis Black Bag', 4, 64.20, 7.50],
+         ['milly', 'Pro Tennis Black Bag', 4, 64.20, 7.50]])
+    expect = 15.0
     assert actual == expect
