@@ -6,6 +6,7 @@ def test_tax_cost():
     expected = '10.70'
     assert money == expected
 
+
 def test_return_deposit():
     actual = core.return_deposit(
         [['bob', 'Pro Tennis Black Bag', 4, 64.20, 7.50]], 'bob')
@@ -16,4 +17,9 @@ def test_return_deposit():
     expect = 'invalid item'
     assert expect == actual
 
-def total_deposits():
+
+def test_total_deposits():
+    actual = core.total_deposits(
+        [['milly', 'Pro Tennis Black Bag', 4, 64.20, 7.50]])
+    expect = 7.50
+    assert actual == expect
