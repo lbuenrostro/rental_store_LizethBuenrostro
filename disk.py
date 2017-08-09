@@ -13,6 +13,8 @@ def load_inventory():
 
 
 def load_history():
+    '''  -> list[list]
+    returns each piece in history'''
     with open('history.txt', 'r') as file:
         file.readline()
         items = file.readlines()
