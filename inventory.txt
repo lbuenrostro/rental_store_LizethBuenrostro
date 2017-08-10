@@ -1,6 +1,6 @@
-item, price, replace_value,stock
-Travel Cart Ball Basket, 25.00, 100
-Tennis Racquet Graphene Speed, 16.00, 45
-Powerbase Solo Tennis Trainer, 15.00, 107
-Pro Tennis Black Bag, 15.00, 75
-Tennis Balls Low Compression, 10.00, 78
+item, price, rental_cost, stock, replacement_cost
+Travel Cart Ball Basket, 25.00, 100, 100
+Tennis Racquet Graphene Speed, 16.00, 45, 200
+Powerbase Solo Tennis Trainer, 15.00, 107, 50
+Pro Tennis Black Bag, 5.00, 75, 15
+Tennis Balls Low Compression, 2.00, 78, 15
