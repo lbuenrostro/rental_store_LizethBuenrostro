@@ -7,8 +7,11 @@ def load_inventory():
         items = file.readlines()
     inventory = []
     for element in items:
-        pieces = element.split(', ')
-        inventory.append([pieces[0]])
+        pieces = element.strip().split(', ')
+        pieces[1] = float(pieces[1])
+        pieces[2] = int(pieces[2])
+        pieces[3] = float(pieces[3])
+        inventory.append(pieces)
     return inventory
 
 
@@ -20,29 +23,14 @@ def load_history():
         items = file.readlines()
         inventory = []
         for item in items:
-            pieces = item.split(', ')
+            pieces = item.strip().split(', ')
             inventory.append([
                 pieces[0], pieces[1],
                 int(pieces[2]),
                 float(pieces[3]),
-                float(pieces[4].strip())
+                float(pieces[4])
             ])
         return inventory
-
-
-def total_money(item, hours, amount):
-    '''Float, float, float -> float'''
-    message = '🎾Item not found🎾'
-    with open('inventory.txt', 'r') as file:
-        file.readline()
-        items = file.readlines()
-    for element in items:
-        if item.title() in element:
-            pieces = element.split(', ')
-            price = pieces[1]
-            total = float(price) * float(hours) * float(amount)
-            return total
-    return message
 
 
 def update_history(name, item, hours, tax_price, deposit):
