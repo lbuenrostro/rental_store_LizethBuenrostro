@@ -43,15 +43,15 @@ def rent_store():
 def get_login(user, password):
     while True:
         username = input("\nPlease enter username: ")
-        pw = input("Please enter password: ")
-        if username == user and pw == password:
+        pww = input("Please enter password: ")
+        if username == user and pww == password:
             print(
                 '\nWelcome Mr.', username,
                 '🎾WELCOME to Tennis Rental Agency🎾\n... Press ENTER to continue...'
             )
             input()
             break
-        elif username.lower() == 'q' or pw.lower == 'q':
+        elif username.lower() == 'q' or pww.lower == 'q':
             exit()
         else:
             print('Invalid Username')
