@@ -1,3 +1,15 @@
+def get_names(inventory):
+    """ [[str, float, int, float]] -> [str]
+    returns a list of the first items in a list of lists
+    >>> get_names([['l', 'i', 'z', 'a'], ['bue', 'nro', 'st', 'ro']])
+    ['l', 'bue']
+    """
+    names = []
+    for item in inventory:
+        names.append(item[0])
+    return names
+
+
 def tax_cost(money):
     ''' (float) -> float 
     This function will get the total_cost
@@ -35,8 +47,20 @@ def total_deposits(history):
     ''' list[list] -> float
     calculate total revenue 
     to user 
+    the rental purchase is index 3
+    and the deposit value is index 4
     '''
     x = 0
     for item in history:
-        x += item[4]
+        x += item[3] + item[4]
     return x
+
+
+def total_money(item, hours, amount, inventory):
+    '''Float, float, float, [[]] -> float'''
+    for element in inventory:
+        if item == element[0]:
+            rate = float(element[1])
+            total = rate * float(hours) * float(amount)
+            return total
+    return '🎾Item not found🎾'
